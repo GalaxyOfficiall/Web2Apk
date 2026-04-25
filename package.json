@@ -1,0 +1,9 @@
+{
+  "name": "web2apk-vercel",
+  "version": "1.0.0",
+  "description": "Web2APK Dashboard - Vercel Deployment",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
