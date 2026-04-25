@@ -35,16 +35,18 @@ module.exports = async (req, res) => {
         }
     }
 
-    const { username, licenseKey, deviceId } = req.body || {};
+    // Frontend mengirim 'key', bukan 'licenseKey'
+    const { username, key, licenseKey, deviceId } = req.body || {};
+    const resolvedKey = licenseKey || key;
 
-    if (!username || !licenseKey || !deviceId) {
+    if (!username || !resolvedKey || !deviceId) {
         return res.status(400).json({
             success: false,
             error: 'Username, license key, dan device ID diperlukan'
         });
     }
 
-    const result = licenseKeyService.validateLogin(username, licenseKey, deviceId);
+    const result = licenseKeyService.validateLogin(username, resolvedKey, deviceId);
 
     if (!result.success) {
         return res.status(401).json({ success: false, error: result.error });
