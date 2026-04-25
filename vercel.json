@@ -1,33 +1,29 @@
 {
   "version": 2,
-  "buildCommand": "",
   "outputDirectory": "public",
   "rewrites": [
-    { "source": "/api/auth/login",    "destination": "/api/auth/login" },
-    { "source": "/api/auth/verify",   "destination": "/api/auth/verify" },
-    { "source": "/api/auth/logout",   "destination": "/api/auth/logout" },
-    { "source": "/api/stats",         "destination": "/api/stats" },
-    { "source": "/api/specs",         "destination": "/api/specs" },
-    { "source": "/api/build",         "destination": "/api/build" },
-    { "source": "/api/build-zip",     "destination": "/api/build-zip" },
+    { "source": "/api/auth/login",       "destination": "/api/auth/login" },
+    { "source": "/api/auth/verify",      "destination": "/api/auth/verify" },
+    { "source": "/api/auth/logout",      "destination": "/api/auth/logout" },
+    { "source": "/api/stats",            "destination": "/api/stats" },
+    { "source": "/api/specs",            "destination": "/api/specs" },
+    { "source": "/api/build",            "destination": "/api/build" },
+    { "source": "/api/build-zip",        "destination": "/api/build-zip" },
     { "source": "/api/build-zip-stream", "destination": "/api/build-zip" },
-    { "source": "/api/logs",          "destination": "/api/logs" },
-    { "source": "/api/notification",  "destination": "/api/notification" },
-    { "source": "/login",             "destination": "/login.html" },
-    { "source": "/(.*)",              "destination": "/index.html" }
+    { "source": "/api/logs",             "destination": "/api/logs" },
+    { "source": "/api/notification",     "destination": "/api/notification" },
+    { "source": "/login",                "destination": "/login.html" },
+    { "source": "/(.*)",                 "destination": "/index.html" }
   ],
   "headers": [
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Origin",  "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, DELETE, OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
       ]
     }
-  ],
-  "env": {
-    "KEYS_JSON": "@keys_json",
-    "TOKEN_SECRET": "@token_secret"
-  }
+  ]
 }
+
